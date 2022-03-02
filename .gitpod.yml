@@ -3,17 +3,14 @@ ports:
     onOpen: notify
 
 tasks:
-  - name: lamdera live
+  - name: elm-live
     init: |
       mkdir /workspace/.bin
-      curl https://static.lamdera.com/bin/linux/lamdera -o /workspace/.bin/lamdera
-      chmod a+x /workspace/.bin/lamdera
       npm install
       gp sync-done npminstall
     command: |
       export PATH="/workspace/.bin:$PATH"
-      yes | sudo apt install libncurses5
-      echo "Start server with: lamdera live"
+      echo "Start server with: elm-live"
     
 vscode:
   extensions:
